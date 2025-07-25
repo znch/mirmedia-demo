@@ -8,6 +8,12 @@ body{
     margin: 0;
 
 }
+
+.scroll-placeholder{
+
+    height: 50vh;
+}
+
  /* Sekce pro navigační pruh */
 .navbar{
     height: 122px;
@@ -104,6 +110,9 @@ body{
     text-align: center;
 }
 
+button{
+    cursor: pointer;
+}
 
 .button-white{
     min-width: 243px;
@@ -140,6 +149,7 @@ body{
     overflow: hidden;
     position: relative;
 }
+
 .nakupuj-karta img{
     transform: scale(1.5);
     translate: 0 50px;
@@ -164,17 +174,88 @@ body{
 
 /* Sekce pro grid s výběrem z nabídky */
 
-.vyberte-grid{
+.vyberte-section{
     width: 100%;
     height: 630px;
+    display: flex;
+    flex-direction: column;
     background-color: black;
+}
+
+.vyberte-section-nadpis{
+    padding-top: 50px;
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+}
+
+.vyberte-grid{
+    width: max-content;
+    position: relative;
+    display: inline-flex;
+    gap: 0px;
+    
+    justify-content: center;
+}
+
+.vyberte-tab {
+    width: 361px;
+    height: 610px;
+    overflow: hidden;
+    position: inherit;
+}
+
+.vyberte-grid-tlacitko {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
 
 }
 
-.vyberte-grid h1{
+.vyberte-grid-tlacitko .button-zobrazit-vice{
+    align-self: end;
+    translate: 0 -50%;
+}
 
+.vyberte-tab img{
+    position: absolute;
+    object-fit: cover;
+}
+
+.vyberte-tab-text{
+    position: absolute;
+    text-decoration: none;
     color: #fff;
-    text-align: center;
-    padding-top: 50px;
+    top: 75%;    
+    
+}
+
+.vyberte-tab-text h1{
     font-size: 36px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10%;
+    width: 100%;
+}
+
+.vyberte-tab-text h2{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10%;
+    width: 100%;
+}
+
+.button-zobrazit-vice{
+    width: 243px;
+    height: 118px;
+    border: none;
+    font-size: 17px;
+    background-color: #ECB235;
+
 }
