@@ -1,0 +1,180 @@
+.montserrat-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+body{
+    margin: 0;
+
+}
+ /* Sekce pro navigační pruh */
+.navbar{
+    height: 122px;
+    width: 100%;
+    background-color: #fff;
+    display: inline-flex;
+    position: fixed;
+    z-index: 7;
+    align-items: center;
+    gap: 15px;
+    
+}
+.logo{
+    height: 66px;
+    min-width: 223px;
+    max-width: 223px;
+    margin-left: 240px;
+    background-color: #E9E9E9;
+    display: flex;
+}
+.logo a{
+    margin: auto;
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+    
+    
+}
+.odkazy{
+    margin-left: 10%;
+    display: inline-flex;
+    gap: 50px;
+
+}
+.odkazy a{
+    color: #000;
+    text-decoration: none;
+}
+
+.search-bar{
+    border-bottom: 1.5px solid #C9C9C9;
+    margin-left: 50px;
+    
+}
+.search-bar input{
+    text-decoration: none;
+    border: none;
+    font-size: 14px;
+    align-self: center;
+    
+}
+.search-bar input:focus{
+    outline: none;
+    
+    
+}
+
+/* Sekce pro záhlavní obrázek */
+
+.zahlavi-obrazek{
+    position: relative;
+    display: flex;
+    width: 100%;
+    
+
+}
+
+.zahlavi-obrazek img{
+    z-index: 1;
+    width: 100%;
+    object-fit: cover;
+}
+
+.zahlavi-text-na-obrazku{
+    z-index: 2;
+    width: 623px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.zahlavi-text-na-obrazku h2{
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 18%;
+    font-weight: normal;
+}
+.zahlavi-text-na-obrazku h1{
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+
+.button-white{
+    min-width: 243px;
+    max-width: 243px;
+    height: 58px;
+
+    background-color: #fff;
+    border: none;
+    display: flex;
+    margin: auto;
+
+}
+.button-white span{
+    font-size: 14px;
+    display: flex;
+    margin: auto;
+
+}
+
+/* Sekce pro grid s tlačítky nakupuj */
+
+.nakupuj-grid{
+    display: inline-flex;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 15px;
+    justify-content: center;
+}
+
+.nakupuj-karta{
+    height: 470px;
+    width: 470px;
+    overflow: hidden;
+    position: relative;
+}
+.nakupuj-karta img{
+    transform: scale(1.5);
+    translate: 0 50px;
+    z-index: 1;
+}
+
+.nakupuj-karta-text{
+    
+    z-index: 2;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+}
+
+.nakupuj-karta-text h1{
+    color: #fff;
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 80px;
+    
+}
+
+/* Sekce pro grid s výběrem z nabídky */
+
+.vyberte-grid{
+    width: 100%;
+    height: 630px;
+    background-color: black;
+
+}
+
+.vyberte-grid h1{
+
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 36px;
+}
