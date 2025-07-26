@@ -11,7 +11,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
-	<body class="montserrat-text">
+	<body class="montserrat-text no-scrollbar">
 		<nav class="navbar">
 			<div class="logo"><a href="#">LOGO</a></div>
 			<div class="odkazy">
@@ -135,24 +135,173 @@
 			</div>
 		</section>
 
-		<section id="novinky">
+		<section id="nabidka-produkty">
+			<!--
+			
 			<div>
-				<div></div>
+				<div>
+					<h1>Novinky</h1>
+					<h1>Nejprodávanější</h1>
+					<h1>Doporučené</h1>
+				</div>
+
+				<div id="produkty-wrapper">
+					<div class="produkt">
+						<img src="" alt="">
+						<h1>$PRODUCT_NAME</h1>
+						<h3>Skladem</h3>
+						<h2>$PRODUCT_PRICE</h2>
+
+					</div>
+				</div>
+				<button class="button-vice-produktu">Zobrazit více produktů</button>
 			</div>
+			
+			-->
 		</section>
 
 		<section id="blog">
+			<div class="blog-wrapper">
+				<h1 class="blog-wrapper-nadpis">Přečtěte si z našeho blogu</h1>
+				<div class="blog-grid-tlacitko">
 
+				
+				<div class="blog-grid">
+					<div class="clanek-nahled" id="bankovka">
+						<div class="clanek-nahled-text">
+							<h2>20.12.2021</h2>
+							<h1>Lorem Ipsum</h1>
+							<h2>SVG + Lukáš | 0 Comments</h2>
+						</div>
+					</div>
+					<div class="clanek-nahled" id="prasatko">
+						<div class="clanek-nahled-text">
+							<h2>20.12.2021</h2>
+							<h1>Lorem Ipsum</h1>
+							<h2>SVG + Lukáš | 0 Comments</h2>
+						</div>
+					</div>
+					<div class="clanek-nahled" id="businessman">
+						<div class="clanek-nahled-text">
+							<h2>20.12.2021</h2>
+							<h1>Lorem Ipsum</h1>
+							<h2>SVG + Lukáš | 0 Comments</h2>
+						</div>
+					</div>
+					<div class="clanek-nahled" id="stonks">
+						<div class="clanek-nahled-text">
+							<h2>20.12.2021</h2>
+							<h1>Lorem Ipsum</h1>
+							<h2>SVG + Lukáš | 0 Comments</h2>
+						</div>
+
+					</div>
+					<div class="clanek-nahled-span-2" id="lupa">
+						<div class="clanek-nahled-span-2-text">
+							<h2>20.12.2021</h2>
+							<h1>Lorem Ipsum</h1>
+							<h2>SVG + Lukáš | 0 Comments</h2>
+						</div>
+					</div>
+
+				</div>
+				<button class="button-zobrazit-vice montserrat-text">Zobrazit více + SVG</button>
+				</div>
+			</div>
 		</section>
 
 		<section id="vyhody">
+			<div class="vyhody-wrapper">
+				<div class="vyhody-tab">
+					<img src="./assets/img/ikony-vyhody/doprava.png" alt="">
+					<span>Doprava zdarma na&nbsp;vše od 5000 Kč</span>
+				</div>
+				<div class="vyhody-tab">
+					<img src="./assets/img/ikony-vyhody/fixace.png" alt="">
+					<span>Okamžitá fixace cen do 150 000 Kč</span>
+				</div>
+				<div class="vyhody-tab">
+					<img src="./assets/img/ikony-vyhody/qr.png" alt="">
+					<span>Možnost platby pomocí QR kódu</span>
+				</div>
+				<div class="vyhody-tab">
+					<img src="./assets/img/ikony-vyhody/banka.png" class="banka-img" alt="">
+					<span>Vykupujeme historické i&nbsp;novodobé mince</span>
+				</div>
+			</div>
 
 		</section>
 
-		<div class="scroll-placeholder"></div>
+		
+		<section id="kontakt">
+			<div class="kontakt-wrapper">
+				<h1>Zůstaňte s námi v kontaktu</h1>
+									
+					<form class="kontakt-input" action="" method="">
+					<input class="montserrat-text" id="email" name="email" type="email" placeholder="@Zadej svůj email">
+					<button class="montserrat-text" type="submit">Odeslat + SVG</button>
+					</form>
+					
 
-		<footer>
+				
+			</div>
+		</section>
+		
 
+		<footer class="zapati">
+		<div class="zapati-wrapper">
+			<div class="zapati-logo">
+				<div class="logo"><a href="#">LOGO</a></div>
+			</div>
+			<div class="zapati-info">
+				<div id="jak-nakoupit">
+					<h1>Jak nakoupit</h1>
+					<ul>
+						<li><a href="">Platební podmínky</a></li>
+						<li><a href="">Fixační podmínky</a></li>
+						<li><a href="">Dodací a skladovací podmínky</a></li>
+						<li><a href="">Obchodní podmínky</a></li>
+						<li><a href="">Ochrana osobních údajů</a></li>
+						<li><a href="">Reklamace</a></li>
+					</ul>
+				</div>
+				<div id="vase-objednavky">
+					<h1>Vaše objednávky</h1>
+					<ul>
+						<li><a href="">Stav objednávky</a></li>
+						<li><a href="">Stav poštovní zásilky</a></li>
+						<li><a href="">Přehled služeb a benefitů</a></li>
+						<li><a href="">Výkupní podmínky</a></li>
+						<li><a href="">Nejčastější dotazy</a></li>
+						<li><a href="">Grafy investičních kovů</a></li>
+					</ul>
+				</div>
+				<div id="o-spolecnosti">
+					<h1>O společnosti</h1>
+					<ul>
+						<li><a href="">Základní informace</a></li>
+						<li><a href="">Pobočky</a></li>
+						<li><a href="">Kontakty</a></li>
+						<li><a href="">Partneři</a></li>
+						<li><a href="">Blog</a></li>
+						<li><a href="">Kariéra</a></li>
+					</ul>
+				</div>
+				<div id="kontakt">
+					<h1>Kontakt</h1>
+					<ul>
+						<li>SVG + SVG</li>
+						<li>SVG + +421919163181</li>
+						<li>SVG + info@constantinvest.com</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="zapati-copyright">
+				<div>Copyright 2021 Constant Invest</div>
+				<div>vytvořil Shoptet | mmLOGO + MirandaMedia Group, s.r.o.</div>
+			</div>
+		</div>
 		</footer>
 
 

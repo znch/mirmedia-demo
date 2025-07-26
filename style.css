@@ -1,18 +1,30 @@
 .montserrat-text {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 body{
     margin: 0;
 
 }
+h1, h2, h3, h4{
+    font-weight: 500;
+    margin: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
 .scroll-placeholder{
-
     height: 50vh;
 }
+
+button{
+    cursor: pointer;
+}
+
 
  /* Sekce pro navigační pruh */
 .navbar{
@@ -24,16 +36,21 @@ body{
     z-index: 7;
     align-items: center;
     gap: 15px;
+    top: 0;
     
 }
 .logo{
     height: 66px;
     min-width: 223px;
     max-width: 223px;
-    margin-left: 240px;
     background-color: #E9E9E9;
     display: flex;
 }
+
+.navbar .logo{
+    margin-left: 240px;
+}
+
 .logo a{
     margin: auto;
     text-decoration: none;
@@ -110,9 +127,6 @@ body{
     text-align: center;
 }
 
-button{
-    cursor: pointer;
-}
 
 .button-white{
     min-width: 243px;
@@ -154,6 +168,7 @@ button{
     transform: scale(1.5);
     translate: 0 50px;
     z-index: 1;
+    object-fit: fill;
 }
 
 .nakupuj-karta-text{
@@ -257,5 +272,269 @@ button{
     border: none;
     font-size: 17px;
     background-color: #ECB235;
+
+}
+
+/* Sekce pro nabídku produktů */
+
+/* Sekce pro blog */
+
+.blog-wrapper{
+    background-color: #131313;
+    margin-top: 200px;
+    height: 974px;
+}
+
+.blog-wrapper-nadpis{
+    color: #fff;
+    font-size: 36px;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+}
+
+.blog-grid{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(3, 0fr);
+    grid-template-rows: repeat(2, 0fr);
+    gap: 0px;
+}
+
+.blog-grid-tlacitko{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.blog-grid-tlacitko .button-zobrazit-vice{
+    align-self: end;
+    translate: 0 -50%;
+}
+
+.clanek-nahled{
+    position: relative;
+    height: 336px;
+    width: 480px;
+    overflow: hidden;
+}
+
+.clanek-nahled, #bankovka{
+    background: linear-gradient(90deg,rgba(46, 46, 46, 1) 0%, rgba(0, 0, 0, 0) 100%), url(assets/img/bankovka.png);
+    background-position: center;
+    background-size: cover;
+}
+.clanek-nahled, #prasatko{
+    background: #2E2E2E;
+    background: linear-gradient(90deg,rgba(46, 46, 46, 1) 0%, rgba(0, 0, 0, 0) 100%), url(assets/img/prasatko.png);
+    background-position: center;
+    background-size: cover;
+}
+.clanek-nahled, #businessman{
+    background: #2E2E2E;
+    background: linear-gradient(90deg,rgba(46, 46, 46, 1) 0%, rgba(0, 0, 0, 0) 100%), url(assets/img/businessman.png);
+    background-position: center;
+    background-size: cover;
+}
+.clanek-nahled, #stonks{
+    background: #2E2E2E;
+    background: linear-gradient(90deg,rgba(46, 46, 46, 1) 0%, rgba(0, 0, 0, 0) 100%), url(assets/img/stonks.png);
+    background-position: center;
+    background-size: cover;
+}
+.clanek-nahled-span-2, #lupa{
+    background: #2E2E2E;
+    background: linear-gradient(90deg,rgba(46, 46, 46, 1) 0%, rgba(0, 0, 0, 0) 100%), url(assets/img/lupa.png);
+    background-position: center;
+    background-size: cover;
+}
+
+
+.clanek-nahled-span-2{
+    height: 336px;
+    grid-column: span 2;
+    overflow: hidden;
+    position: relative;
+}
+
+.clanek-nahled-text, .clanek-nahled-span-2-text{
+    position: absolute;
+    color: #fff;
+    top: 65%;
+    margin-left: 5%;
+}
+
+
+.clanek-nahled-text h1, .clanek-nahled-span-2 h1{
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+
+}
+.clanek-nahled-text h2, .clanek-nahled-span-2 h2{
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Sekce pro info o výhodách */
+
+.vyhody-wrapper{
+    display: inline-flex;
+    width: 80%;
+    height: 120px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vyhody-tab{
+    display: inline-flex;
+}
+
+.vyhody-tab img{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 60px;
+}
+
+.vyhody-tab .banka-img{
+    height: 30px;
+    outline: 3.5px solid #ECB235;
+    outline-offset: 5px;
+    border-radius: 50%;
+}
+
+.vyhody-tab span{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 200px;
+    margin-left: 2.5%
+}
+
+/* Sekce pro část na kontakt */
+
+.kontakt-wrapper{
+    background-color: #ECB235;
+    height: 385px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    background-image: url(assets/img/message-icon.png);
+    background-repeat: no-repeat;
+    background-position: 31.5% 78%;
+}
+
+.kontakt-wrapper h1{
+    font-size: 36px;
+    padding-top: 80px;
+}
+
+.kontakt-input{
+    padding-top: 65px;
+    display: inline-flex;
+    align-content: center;
+}
+
+.kontakt-input input{
+    width: 450px;
+    height: 120px;
+    border: none;
+    outline: none;
+    padding: 0;
+    padding-left: 50px;
+    font-size: 18px;
+}
+
+.kontakt-input input::placeholder{
+    color: #939393;
+}
+
+.kontakt-input button{
+    width: 240px;
+    height: 120px;
+    margin-left: 3%;
+    color: #fff;
+    background-color: #131313;
+    border: none;
+    outline: none;
+
+}
+
+/* Sekce pro zápatí */
+
+.zapati{
+    height: max-content;
+    background-color: #131313;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+
+}
+
+.zapati ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.zapati-wrapper{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 5rem;
+}
+
+.zapati-logo{
+    display: inherit;
+
+}
+
+.zapati-info{
+    width: 100%;
+    margin-top: 5.5rem;
+    margin-bottom: 9rem;
+    display: inline-flex;
+    
+    gap: 5rem;
+
+}
+
+.zapati-info #kontakt{
+    margin-left: auto;
+    margin-right: 3.5rem;
+}
+
+.zapati-info h1{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 170%;
+    margin-bottom: 2rem;
+}
+
+.zapati-info a{
+    line-height: 170%;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.zapati-info a:hover{
+    text-decoration: underline;
+}
+
+.zapati-copyright{
+    font-size: 18px;
+    font-weight: 400;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
 
 }
