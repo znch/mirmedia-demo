@@ -12,45 +12,64 @@
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body class="montserrat-text no-scrollbar">
-		<nav class="navbar">
+		<nav class="navbar" id="navbar">
 			<div class="logo"><a href="#">LOGO</a></div>
 			<div class="odkazy">
-				<a href="#">Produkty 
-					<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
+				<span>
+				<a href="#">
+					Produkty
+					<img src="assets/img/ikony-svg/chevron-down.svg" style="margin-left: 0.2rem;" alt="">
 				</a>
+				</span>
 				<a href="#">Akční nabídka</a>
 				<a href="#">O nás</a>
 				<a href="#">Kontakt</a>
 			</div>
 			<div class="search-bar">
-				<input type="text" class="montserrat-text" placeholder="Napište, co hledáte">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M21 20.9999L16.65 16.6499" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-
-
+				<div class="search-bar-inner">
+					<input type="text" id="search-bar" class="montserrat-text" placeholder="Napište, co hledáte">
+					<img src="assets/img/ikony-svg/search.svg" alt="">
+				</div>
 			</div>
-			<div>
-				CZK
-			</div>
-			<div>
-				Košík
-			</div>
-			<div>
-				User SVG
+			<div class="user-items">
+				<span>
+					<select name="" id="mena" class="montserrat-text">
+						<img src="assets/img/ikony-svg/chevron-down.svg" alt="">
+						<option value="CZK">CZK</option>
+					</select>
+				</span>
+				<a href="#">
+				<span>Košík</span>
+				<img src="assets/img/ikony-svg/Group 1.svg" style="margin-left: 0.7rem;" alt="">
+					
+				
+				</a>
+				<a href="#">
+				<span>
+					
+					<img src="assets/img/ikony-svg/iconoir_profile-circled.svg" alt="">
+					
+				</span>
+				</a>
 			</div>
 		</nav>
 
-		<section id="zahlavi-obrazek">
+		<section id="zahlavi-carousel">
 			<div class="zahlavi-obrazek">
 				<img src="./assets/img/mince-zeny.png" alt="">
 				<div class="zahlavi-text-na-obrazku">
 					<h2>LOREM IPSUM DOLOR SIT</h2>
 					<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
 					<button class="button-white montserrat-text"><span>Zobrazit</span></button>
+				</div>
+				<div class="zahlavi-skroluj">
+					<svg width="1" height="256" viewBox="0 0 1 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<rect width="1" height="256" fill="white"/>
+					</svg>
+					<span>Skroluj</span>
+				</div>
+				<div class="zahlavi-carousel-controls">
+					<img src="assets/img/ikony-svg/carousel-controls.svg" alt="">
 				</div>
 			</div>
 
@@ -59,7 +78,7 @@
 		<section id="nakupuj-grid">
 			<div class="nakupuj-grid">
 				<div class="nakupuj-karta">
-					<img src="./assets/img/stribrne-mince.png" alt="Stříbrné mince" height="470" width="470">
+					<img src="./assets/img/stribrne-mince.png" alt="Stříbrné mince" id="stribrne-mince" height="470" width="470">
 					<div class="nakupuj-karta-text">
 						<h1>Lorem ipsum dolor sit amet, consectetur</h1>
 						<button class="button-white montserrat-text"><span>Nakupuj</span></button>
@@ -75,7 +94,7 @@
 				</div>
 
 				<div class="nakupuj-karta">
-					<img src="./assets/img/mince-aurelius.png" alt="Mince Marcus Aurelius" height="470" width="470">
+					<img src="./assets/img/mince-aurelius.png" alt="Mince Marcus Aurelius" id="aurelius" height="470" width="470">
 					<div class="nakupuj-karta-text">
 						<h1>Lorem ipsum dolor sit amet, consectetur</h1>
 						<button class="button-white montserrat-text"><span>Nakupuj</span></button>
@@ -95,7 +114,14 @@
 						<img src="./assets/img/zlata-mince-orel.png" height="610px" width="361px" alt="Zlatá mince s orlem">
 						<div class="vyberte-tab-text">
 							<h2>Investiční</h2>
-							<h1>Zlaté mince</h1>
+							<h1>Zlaté mince
+								<span class="svg-sipka"><svg width="50" height="16" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M41 15L49 8L41 0.999999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M49 8L1 8L49 8Z" fill="white"/>
+<path d="M49 8L1 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								</span>
+							</h1>
 						</div>
 					</a>
 					</div>
@@ -104,7 +130,14 @@
 						<img src="./assets/img/zlate-cihly.png" height="610px" width="361px" alt="Zlatá mince s orlem">
 						<div class="vyberte-tab-text">
 							<h2>Investiční</h2>
-							<h1>Zlaté slitky</h1>
+							<h1>Zlaté slitky
+							<span class="svg-sipka"><svg width="50" height="16" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M41 15L49 8L41 0.999999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M49 8L1 8L49 8Z" fill="white"/>
+<path d="M49 8L1 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								</span>
+							</h1>
 						</div>
 					</a>
 					</div>
@@ -113,7 +146,14 @@
 						<img src="./assets/img/mince-aurelius.png" id="aurelius" height="610px" width="361px" alt="Zlatá mince s orlem">
 						<div class="vyberte-tab-text">
 							<h2>Historické</h2>
-							<h1>Zlaté mince</h1>
+							<h1>Zlaté mince
+							<span class="svg-sipka"><svg width="50" height="16" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M41 15L49 8L41 0.999999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M49 8L1 8L49 8Z" fill="white"/>
+<path d="M49 8L1 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								</span>
+							</h1>
 						</div>
 					</a>
 					</div>
@@ -122,12 +162,20 @@
 						<img src="./assets/img/zlate-mince.png" height="610px" width="361px" alt="Zlatá mince s orlem">
 						<div class="vyberte-tab-text">
 							<h2>Památní</h2>
-							<h1>Zlaté mince ČNB</h1>
+							<h1>Zlaté mince ČNB
+								<span class="svg-sipka"><svg width="50" height="16" viewBox="0 0 50 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M41 15L49 8L41 0.999999" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M49 8L1 8L49 8Z" fill="white"/>
+<path d="M49 8L1 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								</span>
+
+							</h1>
 						</div>
 					</a>
 					</div>
 					</div>
-					<button class="button-zobrazit-vice montserrat-text">Zobrazit více + SVG</button>
+					<button class="button-zobrazit-vice montserrat-text"><span>Zobrazit více</span> <img src="assets/img/ikony-svg/Group 43.svg" alt=""></button>
 
 				</div>
 				
@@ -136,28 +184,12 @@
 		</section>
 
 		<section id="nabidka-produkty">
-			<!--
 			
-			<div>
-				<div>
-					<h1>Novinky</h1>
-					<h1>Nejprodávanější</h1>
-					<h1>Doporučené</h1>
-				</div>
-
-				<div id="produkty-wrapper">
-					<div class="produkt">
-						<img src="" alt="">
-						<h1>$PRODUCT_NAME</h1>
-						<h3>Skladem</h3>
-						<h2>$PRODUCT_PRICE</h2>
-
-					</div>
-				</div>
-				<button class="button-vice-produktu">Zobrazit více produktů</button>
+			
+			<div class="nabidka-produkty">
 			</div>
 			
-			-->
+			
 		</section>
 
 		<section id="blog">
@@ -167,20 +199,31 @@
 
 				
 				<div class="blog-grid">
+					<a href="#blog">
 					<div class="clanek-nahled" id="bankovka">
 						<div class="clanek-nahled-text">
 							<h2>20.12.2021</h2>
 							<h1>Lorem Ipsum</h1>
-							<h2>SVG + Lukáš | 0 Comments</h2>
+							<h2>
+								<span>
+								<img src="assets/img/ikony-svg/iconoir_profile-circled-white.svg" style="margin-right: 0.2rem;" alt="">
+								
+								Lukáš | 0 Comments
+								</span>
+							</h2>
 						</div>
 					</div>
+					</a>
+					<a href="#blog">
 					<div class="clanek-nahled" id="prasatko">
 						<div class="clanek-nahled-text">
 							<h2>20.12.2021</h2>
 							<h1>Lorem Ipsum</h1>
-							<h2>SVG + Lukáš | 0 Comments</h2>
+							<h2> Lukáš | 0 Comments</h2>
 						</div>
 					</div>
+					</a>
+					<a href="#blog">
 					<div class="clanek-nahled" id="businessman">
 						<div class="clanek-nahled-text">
 							<h2>20.12.2021</h2>
@@ -188,24 +231,31 @@
 							<h2>SVG + Lukáš | 0 Comments</h2>
 						</div>
 					</div>
+					</a>
+					<a href="#blog">
 					<div class="clanek-nahled" id="stonks">
 						<div class="clanek-nahled-text">
 							<h2>20.12.2021</h2>
 							<h1>Lorem Ipsum</h1>
 							<h2>SVG + Lukáš | 0 Comments</h2>
 						</div>
-
+					
 					</div>
+					</a>
+					<a href="#blog" class="clanek-nahled-span-2">
 					<div class="clanek-nahled-span-2" id="lupa">
+						
 						<div class="clanek-nahled-span-2-text">
 							<h2>20.12.2021</h2>
 							<h1>Lorem Ipsum</h1>
 							<h2>SVG + Lukáš | 0 Comments</h2>
 						</div>
+						
 					</div>
-
+					</a>
 				</div>
-				<button class="button-zobrazit-vice montserrat-text">Zobrazit více + SVG</button>
+				<button class="button-zobrazit-vice montserrat-text"><span>Zobrazit více</span> 
+					<img src="assets/img/ikony-svg/Group 43.svg" alt=""></button>
 				</div>
 			</div>
 		</section>
@@ -216,17 +266,22 @@
 					<img src="./assets/img/ikony-vyhody/doprava.png" alt="">
 					<span>Doprava zdarma na&nbsp;vše od 5000 Kč</span>
 				</div>
+				<div><img src="assets/img/ikony-svg/Line 3.svg" alt=""></div>
 				<div class="vyhody-tab">
 					<img src="./assets/img/ikony-vyhody/fixace.png" alt="">
-					<span>Okamžitá fixace cen do 150 000 Kč</span>
+					<span>Okamžitá fixace cen do&nbsp;150 000 Kč</span>
 				</div>
+				<div><img src="assets/img/ikony-svg/Line 3.svg" alt=""></div>
+
 				<div class="vyhody-tab">
 					<img src="./assets/img/ikony-vyhody/qr.png" alt="">
 					<span>Možnost platby pomocí QR kódu</span>
 				</div>
+				<div><img src="assets/img/ikony-svg/Line 3.svg" alt=""></div>
+
 				<div class="vyhody-tab">
-					<img src="./assets/img/ikony-vyhody/banka.png" class="banka-img" alt="">
-					<span>Vykupujeme historické i&nbsp;novodobé mince</span>
+					<img src="./assets/img/ikony-vyhody/banka.png" class="banka-img" style="margin-right: 1rem;" alt="">
+					<span style="width: 220px;">Vykupujeme historické i&nbsp;novodobé mince</span>
 				</div>
 			</div>
 
@@ -235,15 +290,11 @@
 		
 		<section id="kontakt">
 			<div class="kontakt-wrapper">
-				<h1>Zůstaňte s námi v kontaktu</h1>
-									
-					<form class="kontakt-input" action="" method="">
+				<h1>Zůstaňte s námi v kontaktu</h1>		
+					<form class="kontakt-input" action="" method="post">
 					<input class="montserrat-text" id="email" name="email" type="email" placeholder="@Zadej svůj email">
-					<button class="montserrat-text" type="submit">Odeslat + SVG</button>
+					<button class="montserrat-text" type="submit"><span>Odeslat</span><img src="assets/img/ikony-svg/odeslat-sipka.svg" alt=""></button>
 					</form>
-					
-
-				
 			</div>
 		</section>
 		
@@ -290,16 +341,16 @@
 				<div id="kontakt">
 					<h1>Kontakt</h1>
 					<ul>
-						<li>SVG + SVG</li>
-						<li>SVG + +421919163181</li>
-						<li>SVG + info@constantinvest.com</li>
+						<li><span><a href=""><img src="assets/img/ikony-svg/instagram.svg" style="margin-right: 1rem;" alt=""></a><a href=""><img src="assets/img/ikony-svg/facebook.svg" alt=""></a></span></li>
+						<li><span style="margin-top: 0.5rem;"><img src="assets/img/ikony-svg/phone.svg" style="margin-right: 1rem;" alt="">+421919163181</span></li>
+						<li><span style="margin-top: 0.5rem;"><img src="assets/img/ikony-svg/mail.svg" style="margin-right: 1rem;" alt="">info@constantinvest.com</span></li>
 					</ul>
 				</div>
 
 			</div>
 			<div class="zapati-copyright">
 				<div>Copyright 2021 Constant Invest</div>
-				<div>vytvořil Shoptet | mmLOGO + MirandaMedia Group, s.r.o.</div>
+				<div id="vytvoril-miranda"><span>vytvořil Shoptet | </span><img src="assets/img/miranda-logo.png" style="padding-left: 1rem; padding-right: 1rem;" width="31px" alt=""><span> MirandaMedia Group, s.r.o.</span></div>
 			</div>
 		</div>
 		</footer>

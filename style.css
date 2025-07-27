@@ -17,18 +17,15 @@ h1, h2, h3, h4{
   display: none;
 }
 
-.scroll-placeholder{
-    height: 50vh;
-}
 
-button{
+button, select{
     cursor: pointer;
 }
 
-
  /* Sekce pro navigační pruh */
 .navbar{
-    height: 122px;
+    padding: 1.7rem;
+    transition: 0.4s;
     width: 100%;
     background-color: #fff;
     display: inline-flex;
@@ -37,6 +34,7 @@ button{
     align-items: center;
     gap: 15px;
     top: 0;
+    font-weight: 500;
     
 }
 .logo{
@@ -48,7 +46,7 @@ button{
 }
 
 .navbar .logo{
-    margin-left: 240px;
+    margin-left: 13.3rem;
 }
 
 .logo a{
@@ -59,23 +57,51 @@ button{
     
     
 }
+
 .odkazy{
-    margin-left: 10%;
+    margin-left: 9.5rem;
     display: inline-flex;
-    gap: 50px;
+    gap: 2rem;
+    align-items: center;
 
 }
 .odkazy a{
     color: #000;
     text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+
+}
+
+.user-items a{
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+
 }
 
 .search-bar{
+    width: 18rem;
+    height: 2.5rem;
     border-bottom: 1.5px solid #C9C9C9;
-    margin-left: 50px;
+    margin-left: 5rem;
+    display: flex;
     
 }
+.search-bar-inner{
+    margin: auto;
+    width: 17rem;
+    display: inline-flex;
+    align-items: center;
+
+
+}
+
 .search-bar input{
+    width: 100%;
     text-decoration: none;
     border: none;
     font-size: 14px;
@@ -88,12 +114,25 @@ button{
     
 }
 
+.navbar select{
+    border: none;
+    font-size: 14px;
+}
+.user-items{
+    margin-left: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
 /* Sekce pro záhlavní obrázek */
 
 .zahlavi-obrazek{
     position: relative;
     display: flex;
     width: 100%;
+    height: 1020px;
+    overflow: hidden;
     
 
 }
@@ -102,6 +141,8 @@ button{
     z-index: 1;
     width: 100%;
     object-fit: cover;
+    scale: 1.03;
+    transform: translate(0, 2rem);
 }
 
 .zahlavi-text-na-obrazku{
@@ -109,7 +150,7 @@ button{
     width: 623px;
     color: white;
     position: absolute;
-    top: 50%;
+    top: 51%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -117,8 +158,9 @@ button{
     font-size: 18px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 18%;
+    letter-spacing: 0.24rem;
     font-weight: normal;
+    margin-bottom: 1.25rem;
 }
 .zahlavi-text-na-obrazku h1{
     font-weight: 700;
@@ -127,24 +169,57 @@ button{
     text-align: center;
 }
 
+.zahlavi-skroluj{
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    top: 84%;
+    left: 15rem;
+    display: inline-flex;
+}
+
+.zahlavi-skroluj span{
+    height: fit-content;
+    transform: rotate(-90deg) translate(4rem, -1.5rem);
+}
+
+.zahlavi-carousel-controls{
+    width: fit-content;
+    z-index: 2;
+    position: absolute;
+    top: 85%;
+    left: 48.5%;
+}
 
 .button-white{
-    min-width: 243px;
-    max-width: 243px;
+    min-width: 15rem;
+    max-width: 15rem;
     height: 58px;
 
     background-color: #fff;
     border: none;
     display: flex;
     margin: auto;
+    margin-top: 4rem;
+    transition: 0.4s;
+    
 
 }
+
 .button-white span{
     font-size: 14px;
     display: flex;
     margin: auto;
 
 }
+
+.button-white:hover{
+    background-color: #000;
+    color: white;
+    text-decoration: underline;
+}
+
 
 /* Sekce pro grid s tlačítky nakupuj */
 
@@ -162,21 +237,33 @@ button{
     width: 470px;
     overflow: hidden;
     position: relative;
+    display: flex;
 }
 
 .nakupuj-karta img{
     transform: scale(1.5);
-    translate: 0 50px;
+    translate: 0 0px;
     z-index: 1;
-    object-fit: fill;
+    object-fit: contain;
+    filter: saturate(60%);
 }
 
+
+.nakupuj-karta #aurelius{
+    transform: scale(2.1);
+    translate: 25px 35px;
+}
+
+
 .nakupuj-karta-text{
-    
+    width: inherit;
+    height: inherit;
     z-index: 2;
     position: absolute;
-    top: 30%;
+    padding-top: 36%;
+    top: 0;
     text-align: center;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .nakupuj-karta-text h1{
@@ -184,7 +271,6 @@ button{
     font-weight: 700;
     font-size: 36px;
     margin-bottom: 80px;
-    
 }
 
 /* Sekce pro grid s výběrem z nabídky */
@@ -194,11 +280,12 @@ button{
     height: 630px;
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: #131313;
 }
 
 .vyberte-section-nadpis{
-    padding-top: 50px;
+    padding-top: 4.7rem;
+    padding-bottom: 4rem;
     color: #fff;
     font-size: 36px;
     text-align: center;
@@ -238,14 +325,44 @@ button{
 .vyberte-tab img{
     position: absolute;
     object-fit: cover;
+    filter: brightness(70%) hue-rotate(-4deg) contrast(95%);
+}
+
+.vyberte-tab #aurelius{
+    transform: scale(1.3);
+    translate: 0 2rem;
 }
 
 .vyberte-tab-text{
     position: absolute;
     text-decoration: none;
     color: #fff;
-    top: 75%;    
+    padding-top: 27.5rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(236, 178, 53, 0);
+    transition: 0.4s;
     
+}
+
+.svg-sipka{
+    opacity: 0%;
+    margin: 0;
+    transition: 0.4s;
+    translate: 0, 0;
+    
+
+}
+
+.vyberte-tab-text:hover{
+    background-color: rgba(236, 178, 53, 0.7);
+}
+
+.vyberte-tab-text:hover .svg-sipka{
+    
+    opacity: 100%;
+    translate: 0, 5%;
+
 }
 
 .vyberte-tab-text h1{
@@ -253,7 +370,7 @@ button{
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 10%;
+    margin-left: 1.5rem;
     width: 100%;
 }
 
@@ -262,7 +379,7 @@ button{
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 10%;
+    margin-left: 1.5rem;
     width: 100%;
 }
 
@@ -270,12 +387,32 @@ button{
     width: 243px;
     height: 118px;
     border: none;
-    font-size: 17px;
+    font-size: 14px;
     background-color: #ECB235;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    gap: 15%;
+    outline: #ECB235 solid 1px;
+    outline-offset: -1px;
+}
+
+.button-zobrazit-vice:hover{
+    background-color: #131313;
+    color: #fff;
+    padding-left: 5%;
+    
 
 }
 
 /* Sekce pro nabídku produktů */
+
+.nabidka-produkty{
+    margin-top: 50rem;
+    margin-bottom: 10rem;
+}
+
 
 /* Sekce pro blog */
 
@@ -319,6 +456,11 @@ button{
     height: 336px;
     width: 480px;
     overflow: hidden;
+    transition: 0.4s;
+}
+
+.clanek-nahled:hover h1, .clanek-nahled-span-2:hover h1{
+    text-decoration: underline;
 }
 
 .clanek-nahled, #bankovka{
@@ -333,15 +475,13 @@ button{
     background-size: cover;
 }
 .clanek-nahled, #businessman{
-    background: #2E2E2E;
     background: linear-gradient(90deg,rgba(46, 46, 46, 1) 0%, rgba(0, 0, 0, 0) 100%), url(assets/img/businessman.png);
     background-position: center;
     background-size: cover;
 }
 .clanek-nahled, #stonks{
-    background: #2E2E2E;
     background: linear-gradient(90deg,rgba(46, 46, 46, 1) 0%, rgba(0, 0, 0, 0) 100%), url(assets/img/stonks.png);
-    background-position: center;
+    background-position: 0 0;
     background-size: cover;
 }
 .clanek-nahled-span-2, #lupa{
@@ -352,11 +492,13 @@ button{
 }
 
 
+
 .clanek-nahled-span-2{
     height: 336px;
     grid-column: span 2;
     overflow: hidden;
     position: relative;
+    transition: 0.4s;
 }
 
 .clanek-nahled-text, .clanek-nahled-span-2-text{
@@ -365,7 +507,6 @@ button{
     top: 65%;
     margin-left: 5%;
 }
-
 
 .clanek-nahled-text h1, .clanek-nahled-span-2 h1{
     font-size: 36px;
@@ -379,25 +520,65 @@ button{
     margin: 0;
 }
 
+.clanek-nahled-text h2 span, .clanek-nahled-span-2-text h2 span{
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+
+
+.clanek-nahled:hover, #bankovka:hover{
+    background-position: 0 2%;
+}
+.clanek-nahled:hover, #prasatko:hover{
+    background-position: 0 2%;
+}
+.clanek-nahled:hover, #businessman:hover{
+    background-position: 0 2%;
+}
+.clanek-nahled:hover, #stonks:hover{
+    background-position: 0 2%;
+}
+.clanek-nahled-span-2:hover, #lupa:hover{
+    background-position: 0 2%;
+}
+
+
+
+
+
+
+
+
 /* Sekce pro info o výhodách */
+#vyhody{
+    display: flex;
+    justify-content: center;
+}
 
 .vyhody-wrapper{
     display: inline-flex;
     width: 80%;
     height: 120px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
 }
 
 .vyhody-tab{
     display: inline-flex;
+    font-size: 18px;
 }
 
 .vyhody-tab img{
     margin-top: auto;
     margin-bottom: auto;
+    margin-right: 1rem;
     height: 60px;
 }
 
@@ -411,7 +592,7 @@ button{
 .vyhody-tab span{
     margin-top: auto;
     margin-bottom: auto;
-    width: 200px;
+    width: 191px;
     margin-left: 2.5%
 }
 
@@ -461,7 +642,15 @@ button{
     background-color: #131313;
     border: none;
     outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    
 
+}
+
+.kontakt-input button span{
+    padding: 5%;
 }
 
 /* Sekce pro zápatí */
@@ -508,6 +697,16 @@ button{
 .zapati-info #kontakt{
     margin-left: auto;
     margin-right: 3.5rem;
+    font-size: 18px;
+    font-weight: 400;
+
+    
+}
+
+.zapati-info #kontakt span{
+    display: inline-flex;
+    align-items: center;
+    
 }
 
 .zapati-info h1{
@@ -530,11 +729,19 @@ button{
     text-decoration: underline;
 }
 
+
+
 .zapati-copyright{
     font-size: 18px;
     font-weight: 400;
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
+    
+}
 
+.zapati-copyright #vytvoril-miranda{
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
 }
