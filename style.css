@@ -275,6 +275,7 @@ button, select{
 
 /* Sekce pro grid s výběrem z nabídky */
 
+
 .vyberte-section{
     width: 100%;
     height: 630px;
@@ -409,10 +410,66 @@ button, select{
 /* Sekce pro nabídku produktů */
 
 .nabidka-produkty{
-    margin-top: 50rem;
+    margin-top: 17rem;
     margin-bottom: 10rem;
+    display: flex;
 }
 
+.nabidka-nav-buttons{
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    align-items: baseline;
+    
+}
+
+.nabidka-nav-buttons button{
+    border: none;
+    background: none;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.nabidka-nav-buttons button:hover{
+    text-decoration: underline;
+}
+
+.nabidka-nav-buttons .selected h1{
+    color: #000;
+    font-size: 24px;
+
+}
+
+.nabidka-nav-buttons .inactive h1{
+    color: #979797;
+    font-size: 16px;
+}
+
+.nabidka-produkty .produkt-wrapper{
+
+}
+
+.produkt-wrapper .produkt-img{
+
+}
+
+.produkt-wrapper .produkt-nazev{
+
+}
+
+.produkt-wrapper .produkt-dostupnost{
+
+}
+
+.produkt-wrapper .produkt-cena{
+
+}
+
+.produkt-wrapper .produkt-ikona-kosik{
+
+    
+}
 
 /* Sekce pro blog */
 
