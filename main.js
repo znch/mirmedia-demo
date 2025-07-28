@@ -10,8 +10,11 @@ window.addEventListener("load", (event) => vytvorElements(activeCategory, zobraz
  * Změna padding v navbaru při scrollování
  */
 window.onscroll = () => {
-  if(window.innerWidth > 600){
+  if(window.innerWidth > 992){
   scrollFunction()
+  }
+  else{
+    document.getElementById("navbar").style.removeProperty("padding");
   }
 }
 
@@ -21,7 +24,8 @@ function scrollFunction() {
     
   } else {
     document.getElementById("navbar").style.padding = "1.7rem";
-    }
+    
+  }
 }
 
 
@@ -369,14 +373,6 @@ var shadowStyle = `
   }
 
   .produkt-wrapper: hover{
-      display: flex;
-    flex-direction: column;
-    width: 160px; 
-    height: 275px;
-    margin: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    outline: 1px solid #C4C4C4;
     outline-offset: 0.1rem;
   
   }

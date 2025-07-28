@@ -1,4 +1,218 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1620px) {
+    .zahlavi-skroluj{
+    display: none;
+    }
+
+
+    .navbar{
+        gap: 1rem;
+        justify-content: space-evenly;
+    }
+
+    
+    .navbar .logo{
+        margin-left: 0.5rem;
+        min-width: 12rem;
+        max-width: 12rem;
+    
+    }
+    .odkazy{
+        margin-left: 0;
+        gap: 5%;
+        display: flex;
+        width: max-content;
+    }
+
+    .search-bar{
+        margin-left: 3rem;
+        width: 11rem;
+    }
+    .search-bar-inner{
+        width: 11rem;
+    }
+
+    .user-items{
+        margin-left: 0;
+        gap: 1rem;
+    }
+
+    .vyberte-section{
+        height: 470px;
+    }
+
+    .vyberte-tab{
+        width: 240px;
+        height: 482px;
+    }
+
+    .vyberte-tab img{
+        object-fit: cover;
+        width: 240px;
+        height: 482px;
+    }
+
+    .button-zobrazit-vice{
+        width: 210px;
+        height: 102px;
+    }
+
+    .vyberte-tab-text{
+        padding-top: 22rem;
+    }
+
+    .vyberte-tab-text h1{
+        font-size: 24px;
+    }
+
+    .vyberte-tab-text h2{
+        font-size: 12px;
+    }
+
+    .blog-wrapper{
+        height: max-content;
+    }
+
+    .blog-grid{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    grid-template-rows: repeat(3, 0fr);
+    }
+
+    .blog-grid-tlacitko{
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .clanek-nahled{
+        position: relative;
+        height: 284px;
+        width: 406px;
+        overflow: hidden;
+        transition: 0.4s;
+    }
+
+    .clanek-nahled-text, .clanek-nahled-span-2-text{
+        top: 60%;
+    }
+
+    #vyhody{
+        display: flex;
+        justify-content: center;
+        overflow: clip;
+    }
+
+    #vyhody-separator{
+        display:none
+    }
+
+    .vyhody-wrapper{
+        display: flex;
+        width: 100%;
+        height: max-content;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        
+    }
+
+    .vyhody-tab{
+        display: inline-flex;
+        flex-grow: 0;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        font-size: 18px;
+        width: 240px;
+    }
+
+
+    .vyhody-tab img{
+        margin-right: 0.5rem;
+        height: 35px;
+    }
+
+    .vyhody-tab .banka-img{
+        display: flex;
+        margin-left: 0.5rem;
+        margin-right: 1rem;
+        height: 18px;
+        outline: 2.5px solid #ECB235;
+        outline-offset: 2px;
+        border-radius: 50%;
+    }
+
+    .vyhody-tab span{
+        flex-grow: 0;
+        min-width: 0;
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .vyhody-tab #span-banka{
+        flex-grow: 0;
+        min-width: 0;
+        width: 100%;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .zapati{
+    height: max-content;
+    background-color: #131313;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    justify-content: space-between;
+    gap: 0;
+
+
+    }
+
+    .zapati-wrapper{
+        width: 75%;
+    }
+
+    .zapati-logo{
+        display: flex;
+        justify-content: center;
+    }
+
+    .zapati-info{
+        width: max-content;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 4rem;
+        
+    }
+
+    .zapati-info{
+        width: 100%;
+    }
+
+    .zapati-info #kontakt{
+        
+        margin: 0;
+
+    }
+
+}
+
+
+
+
+
+@media only screen and (max-width: 992px) {
 
 .montserrat-text {
     font-family: "Montserrat", sans-serif;
@@ -33,23 +247,23 @@ button, select{
     display: inline-flex;
     position: fixed;
     z-index: 7;
-    align-items: center;
-    gap: 15px;
+    justify-content: space-between;
+    overflow: clip;
+    gap: 2rem;
     top: 0;
     font-weight: 500;
     
 }
-.logo{
+.navbar .logo{
     height: 39px;
     min-width: 104px;
     max-width: 104px;
     background-color: #E9E9E9;
     display: flex;
+    margin-left: 0;
+
 }
 
-.navbar .logo{
-    margin-left: 0;
-}
 
 .logo a{
     margin: auto;
@@ -128,11 +342,11 @@ button, select{
 }
 
 .nav-small{
-    width: 100%;
+    width: 90%;
     display:inline-flex;
     align-items: center;
-    justify-content: space-evenly;
-    gap: 1rem;
+    justify-content: space-around;
+    gap: 0.5rem;
 
     
 }
@@ -760,6 +974,7 @@ button, select{
 
 }
 
+
 .kontakt-input button span{
     padding: 0;
 }
@@ -767,6 +982,7 @@ button, select{
 .kontakt-input img{
     scale: 0.5;
     width: auto;
+    translate: -0.6rem 0;
 
 }
 
