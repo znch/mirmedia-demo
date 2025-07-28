@@ -125,6 +125,10 @@ button, select{
     gap: 2.5rem;
 }
 
+.nav-small{
+    display: none;
+}
+
 /* Sekce pro záhlavní obrázek */
 
 .zahlavi-obrazek{

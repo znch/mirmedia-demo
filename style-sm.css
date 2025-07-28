@@ -26,11 +26,11 @@ button, select{
 
  /* Sekce pro navigační pruh */
 .navbar{
-    padding: 1.7rem;
+    padding: 0.5rem;
     transition: 0.4s;
-    width: 100%;
+    width: calc(100% - 1rem);
     background-color: #fff;
-    display: none;
+    display: inline-flex;
     position: fixed;
     z-index: 7;
     align-items: center;
@@ -40,15 +40,15 @@ button, select{
     
 }
 .logo{
-    height: 66px;
-    min-width: 223px;
-    max-width: 223px;
+    height: 39px;
+    min-width: 104px;
+    max-width: 104px;
     background-color: #E9E9E9;
     display: flex;
 }
 
 .navbar .logo{
-    margin-left: 13.3rem;
+    margin-left: 0;
 }
 
 .logo a{
@@ -62,7 +62,7 @@ button, select{
 
 .odkazy{
     margin-left: 9.5rem;
-    display: inline-flex;
+    display: none;
     gap: 2rem;
     align-items: center;
 
@@ -90,7 +90,7 @@ button, select{
     height: 2.5rem;
     border-bottom: 1.5px solid #C9C9C9;
     margin-left: 5rem;
-    display: flex;
+    display: none;
     
 }
 .search-bar-inner{
@@ -122,9 +122,31 @@ button, select{
 }
 .user-items{
     margin-left: 2rem;
-    display: inline-flex;
+    display: none;
     align-items: center;
     gap: 2.5rem;
+}
+
+.nav-small{
+    width: 100%;
+    display:inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    
+}
+.nav-small a{
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+
+}
+.nav-small button{
+    border: none;
+    background: transparent;
 }
 
 /* Sekce pro záhlavní obrázek */

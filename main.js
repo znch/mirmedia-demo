@@ -9,7 +9,11 @@ window.addEventListener("load", (event) => vytvorElements(activeCategory, zobraz
 /**
  * Změna padding v navbaru při scrollování
  */
-window.onscroll = () => {scrollFunction()};
+window.onscroll = () => {
+  if(window.innerWidth > 600){
+  scrollFunction()
+  }
+}
 
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -19,6 +23,7 @@ function scrollFunction() {
     document.getElementById("navbar").style.padding = "1.7rem";
     }
 }
+
 
 /**
  * Obsluha fetchování produktů z JSONu + tvorba elementů a manipulace DOM
