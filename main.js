@@ -343,6 +343,7 @@ var shadowStyle = `
   h1, h2 {
     margin-top: 0.4rem;
     margin-bottom: 0.4rem;
+
   }
 
 
@@ -353,7 +354,6 @@ var shadowStyle = `
     width: 160px; 
     height: 275px;
     margin: 0;
-    padding-left: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     outline: 1px solid #C4C4C4;
@@ -363,11 +363,25 @@ var shadowStyle = `
   
   }
 
+  .produkt-wrapper: hover{
+      display: flex;
+    flex-direction: column;
+    width: 160px; 
+    height: 275px;
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    outline: 1px solid #C4C4C4;
+    outline-offset: 0.1rem;
+  
+  }
+
 
   .produkt-img{
     max-height: 168px;
     min-height: 168px;
     
+
     object-fit: cover;
     margin-bottom: 1rem;
   
@@ -378,6 +392,8 @@ var shadowStyle = `
     font-weight: 500;
     height: 30px;
     width: 151px;
+    padding-left: 0.5rem;
+
     flex-shrink: 0;
     display: inline-block;
     text-decoration:none;
@@ -391,6 +407,16 @@ var shadowStyle = `
   .produkt-dostupnost{
     font-size: 12px;
     font-weight: 500;
+    width: 151px;
+    padding-left: 0.5rem;
+
+    flex-shrink: 0;
+    display: inline-block;
+    text-decoration:none;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   .text-gray{
@@ -408,6 +434,8 @@ var shadowStyle = `
   .produkt-cena{
     font-size:12px;
     font-weight: 500;
+    padding-left: 0.5rem;
+
   }
 
   .kosik-wrapper{
@@ -430,6 +458,7 @@ var shadowStyle = `
 
   .flag-wrapper{
     translate: 4.9rem -19rem;
+    width: fit-content;
 
   }
 

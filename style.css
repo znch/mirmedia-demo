@@ -651,6 +651,7 @@ button, select{
     outline: 3.5px solid #ECB235;
     outline-offset: 5px;
     border-radius: 50%;
+    
 }
 
 .vyhody-tab span{
@@ -658,6 +659,10 @@ button, select{
     margin-bottom: auto;
     width: 191px;
     margin-left: 2.5%
+}
+
+.vyhody-tab #span-banka{
+    width: 220px;
 }
 
 /* Sekce pro část na kontakt */
@@ -808,4 +813,10 @@ button, select{
     display: inline-flex;
     align-items: center;
     width: fit-content;
+}
+
+.zapati #miranda-logo{
+    padding-left: 1rem; 
+    padding-right: 1rem;
+    width: 31px;
 }

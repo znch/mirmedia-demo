@@ -417,7 +417,7 @@ button, select{
 
 .nabidka-produkty{
     margin-top: 13rem;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     
@@ -464,6 +464,8 @@ button, select{
     margin-top: 3rem;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
     width: 100%;
 }
 
@@ -474,7 +476,7 @@ button, select{
     height: 4rem;
     background-color: transparent;
     font-size: 14px;
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -487,24 +489,22 @@ button, select{
 
 .blog-wrapper{
     background-color: #131313;
-    margin-top: 5rem;
-    height: 974px;
+    margin-top: 4rem;
+    height: max-content;
 }
 
 .blog-wrapper-nadpis{
     color: #fff;
-    font-size: 36px;
+    font-size: 24px;
     text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
 }
 
 .blog-grid{
     width: fit-content;
-    display: grid;
-    grid-template-columns: repeat(3, 0fr);
-    grid-template-rows: repeat(2, 0fr);
-    gap: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-grid-tlacitko{
@@ -522,8 +522,8 @@ button, select{
 
 .clanek-nahled{
     position: relative;
-    height: 336px;
-    width: 480px;
+    height: 232px;
+    width: 332px;
     overflow: hidden;
     transition: 0.4s;
 }
@@ -563,7 +563,7 @@ button, select{
 
 
 .clanek-nahled-span-2{
-    height: 336px;
+    height: 232px;
     grid-column: span 2;
     overflow: hidden;
     position: relative;
@@ -573,18 +573,18 @@ button, select{
 .clanek-nahled-text, .clanek-nahled-span-2-text{
     position: absolute;
     color: #fff;
-    top: 65%;
+    top: 55%;
     margin-left: 5%;
 }
 
 .clanek-nahled-text h1, .clanek-nahled-span-2 h1{
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 500;
     margin: 0;
 
 }
 .clanek-nahled-text h2, .clanek-nahled-span-2 h2{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     margin: 0;
 }
@@ -625,78 +625,103 @@ button, select{
 #vyhody{
     display: flex;
     justify-content: center;
+    overflow: clip;
+}
+
+#vyhody-separator{
+    display:none
 }
 
 .vyhody-wrapper{
-    display: inline-flex;
-    width: 80%;
-    height: 120px;
+    display: flex;
+    width: 100%;
+    height: max-content;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
 }
 
 .vyhody-tab{
     display: inline-flex;
-    font-size: 18px;
+    flex-grow: 0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 12px;
+    width: 160px;
 }
 
+
 .vyhody-tab img{
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 1rem;
-    height: 60px;
+    margin-right: 0.5rem;
+    height: 35px;
 }
 
 .vyhody-tab .banka-img{
-    height: 30px;
-    outline: 3.5px solid #ECB235;
-    outline-offset: 5px;
+    display: flex;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+    height: 18px;
+    outline: 2.5px solid #ECB235;
+    outline-offset: 2px;
     border-radius: 50%;
 }
 
 .vyhody-tab span{
+    flex-grow: 0;
+    min-width: 0;
+    width: 100%;
     margin-top: auto;
     margin-bottom: auto;
-    width: 191px;
-    margin-left: 2.5%
 }
+
+.vyhody-tab #span-banka{
+    flex-grow: 0;
+    min-width: 0;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 
 /* Sekce pro část na kontakt */
 
 .kontakt-wrapper{
     background-color: #ECB235;
-    height: 385px;
+    height: 341px;
     color: #fff;
     text-align: center;
     width: 100%;
     background-image: url(assets/img/message-icon.png);
+    background-size: 110%;
     background-repeat: no-repeat;
     background-position: 31.5% 78%;
 }
 
 .kontakt-wrapper h1{
-    font-size: 36px;
-    padding-top: 80px;
+    font-size: 24px;
+    padding-top: 94px;
+    width: 225px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .kontakt-input{
-    padding-top: 65px;
     display: inline-flex;
-    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    width: 95%;
+    padding-top: 2rem;
 }
 
 .kontakt-input input{
-    width: 450px;
-    height: 120px;
-    border: none;
-    outline: none;
-    padding: 0;
-    padding-left: 50px;
-    font-size: 18px;
+    width: 205px;
+    height: 51px;
+    padding-left: 16px;
+    font-size: 12px;
 }
 
 .kontakt-input input::placeholder{
@@ -704,22 +729,23 @@ button, select{
 }
 
 .kontakt-input button{
-    width: 240px;
-    height: 120px;
-    margin-left: 3%;
-    color: #fff;
-    background-color: #131313;
-    border: none;
-    outline: none;
+    width: 112px;
+    margin: 0;
+    padding-left: 5%;
+    height: 51px;
     display: inline-flex;
-    align-items: center;
-    justify-content: space-around;
-    
+    justify-content: center;
 
 }
 
 .kontakt-input button span{
-    padding: 5%;
+    padding: 0;
+}
+
+.kontakt-input img{
+    scale: 0.5;
+    width: auto;
+
 }
 
 /* Sekce pro zápatí */
@@ -731,6 +757,10 @@ button, select{
     flex-direction: column;
     width: 100%;
     color: white;
+    text-align: center;
+    justify-content: space-between;
+    gap: 0;
+
 
 }
 
@@ -741,32 +771,32 @@ button, select{
 }
 
 .zapati-wrapper{
-    width: 75%;
+    width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 5.5rem;
-    padding-bottom: 5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3rem;
 }
 
 .zapati-logo{
-    display: inherit;
+    display: flex;
+    justify-content: center;
 
 }
 
 .zapati-info{
     width: 100%;
     margin-top: 5.5rem;
-    margin-bottom: 9rem;
-    display: inline-flex;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     
-    gap: 5rem;
-
+    
 }
 
 .zapati-info #kontakt{
-    margin-left: auto;
-    margin-right: 3.5rem;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 400;
 
     
@@ -774,21 +804,21 @@ button, select{
 
 .zapati-info #kontakt span{
     display: inline-flex;
-    align-items: center;
+    align-content: center;
     
 }
 
 .zapati-info h1{
     font-weight: 600;
-    font-size: 18px;
+    font-size: 12px;
     line-height: 170%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .zapati-info a{
     line-height: 170%;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 12px;
     letter-spacing: 0;
     color: #fff;
     text-decoration: none;
@@ -801,10 +831,11 @@ button, select{
 
 
 .zapati-copyright{
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 400;
     width: 100%;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     
 }
@@ -813,8 +844,14 @@ button, select{
     display: inline-flex;
     align-items: center;
     width: fit-content;
+    margin-top: 1rem;
 }
 
+.zapati #miranda-logo{
+    padding-left: 0.5rem; 
+    padding-right: 0.5rem;
+    width: 23px;
+}
 
 
 
