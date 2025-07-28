@@ -24,6 +24,27 @@ function scrollFunction() {
  * Obsluha fetchování produktů z JSONu + tvorba elementů a manipulace DOM
  */
 
+let activeCategory = "Novinky";
+let zobrazVse = false;
+
+function setActiveCategory(newCategory){
+  activeCategory = newCategory;
+}
+
+function setZobrazitVse(newValue){
+ zobrazVse = newValue;
+}
+
+function getActiveCategory(){
+  return activeCategory;
+}
+
+function getZobrazVse(){
+  return zobrazVse;  
+}
+
+
+
 // custom komponenta produktu
 class ProduktComponent extends HTMLElement{
   constructor(category, title, availability, price, imgSrc, flags){
@@ -83,6 +104,7 @@ class ProduktComponent extends HTMLElement{
     const style = document.createElement("style");
     style.textContent = shadowStyle;
 
+
     
     // append částí komponenty + stylu
     shadow.appendChild(style);
@@ -105,13 +127,13 @@ class ProduktComponent extends HTMLElement{
         flagsContainer[i].insertAdjacentText("afterbegin", this.flags[i])
         
         if(this.flags[i] == "Tip"){
-          flagsContainer[i].classList.add("flag-tip");
+          flagsContainer[i].classList.add("flag", "flag-tip");
         }
         if(this.flags[i] == "Novinka"){
-          flagsContainer[i].classList.add("flag-novinka");
+          flagsContainer[i].classList.add("flag", "flag-novinka");
         }
         if(this.flags[i] == "Výprodej"){
-          flagsContainer[i].classList.add("flag-vyprodej");
+          flagsContainer[i].classList.add("flag", "flag-vyprodej");
         }
 
         flagWrapper.appendChild(flagsContainer[i]);
@@ -128,25 +150,8 @@ class ProduktComponent extends HTMLElement{
 customElements.define("produkt-component", ProduktComponent);
 
 
-let activeCategory = "Novinky";
-let zobrazVse = false;
 
-function setActiveCategory(newCategory){
-  activeCategory = newCategory;
-}
-
-function setZobrazitVse(newValue){
- zobrazVse = newValue;
-}
-
-function getActiveCategory(){
-  return activeCategory;
-}
-
-function getZobrazVse(){
-  return zobrazVse;  
-}
-
+// vytvoří komponenty na základě vybrané kategorie a jestli je odkliknuté tlačítko zobrazit vše
 async function vytvorElements(category, zobrazVse){
   const wrapper = document.getElementById("nabidka-produkty-wrapper");
   const selectedProducts = await fetchProducts(); 
@@ -303,10 +308,9 @@ var shadowStyle = `
     translate: 12rem -36rem;
 
   }
-
-  .flag-tip{
+  
+  .flag{
     color: #fff;
-    background-color: #ECB235;
     width: 122px;
     height: 30px;
     font-size: 18px;
@@ -316,14 +320,124 @@ var shadowStyle = `
     align-items: center;
     justify-content: center;
     margin: 0.5rem;
+  }
+
+  .flag-tip{
+    background-color: #ECB235;
   }
 
   .flag-novinka{
-    color: #fff;
     background-color: #63DA46;
-    width: 122px;
+  }
+
+  .flag-vyprodej{
+    background-color: #F24D4D;
+  }
+
+  @media only screen and (max-width: 600px) {
+  button{
+    cursor: pointer;
+    border: none;
+  }
+
+  h1, h2 {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+
+  .produkt-wrapper{
+  
+    display: flex;
+    flex-direction: column;
+    width: 160px; 
+    height: 275px;
+    margin: 0;
+    padding-left: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    outline: 1px solid #C4C4C4;
+    outline-offset: 0.1rem;
+    
+    
+  
+  }
+
+
+  .produkt-img{
+    max-height: 168px;
+    min-height: 168px;
+    
+    object-fit: cover;
+    margin-bottom: 1rem;
+  
+  }
+
+  .produkt-nazev{
+    font-size: 12px;
+    font-weight: 500;
     height: 30px;
-    font-size: 18px;
+    width: 151px;
+    flex-shrink: 0;
+    display: inline-block;
+    text-decoration:none;
+    color: #000;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  
+  }
+
+  .produkt-dostupnost{
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .text-gray{
+    color: #979797;
+  }
+
+  .text-green{
+    color: #63DA46;
+  }
+
+  .text-red{
+    color: #F24D4D;  
+  }
+
+  .produkt-cena{
+    font-size:12px;
+    font-weight: 500;
+  }
+
+  .kosik-wrapper{
+    max-height: 34px;
+    max-width: 34px;
+    min-height: 34px;
+    min-width: 34px;
+    background-color: #000;
+    display: flex;
+
+    translate: 7.5rem -2rem;
+  }
+
+  .produkt-ikona-kosik{
+    height: 14px;
+    width: 14px;
+    margin: auto;
+
+    }
+
+  .flag-wrapper{
+    translate: 4.9rem -19rem;
+
+  }
+
+  .flag{
+    color: #fff;
+    width: 75px;
+    height: 19px;
+    font-size: 12px;
     font-weight: 500;
     text-align: center;
     display: flex;
@@ -332,17 +446,17 @@ var shadowStyle = `
     margin: 0.5rem;
   }
 
-  .flag-vyprodej{
-    color: #fff;
-    background-color: #F24D4D;
-    width: 122px;
-    height: 30px;
-    font-size: 18px;
-    font-weight: 500;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5rem;
+  .flag-tip{
+    background-color: #ECB235;
+   
   }
+
+  .flag-novinka{
+    background-color: #63DA46;
+  }
+
+  .flag-vyprodej{
+    background-color: #F24D4D;
+  }
+}
 `;
