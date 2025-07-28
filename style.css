@@ -241,16 +241,18 @@ button, select{
 }
 
 .nakupuj-karta img{
-    transform: scale(1.5);
-    translate: 0 0px;
+    transform: scale(1.1);
+    height: 470px;
+    width: 470px;
+
     z-index: 1;
-    object-fit: contain;
-    filter: saturate(60%);
+    object-fit: cover;
+    filter: saturate(70%) hue-rotate(-5deg);
 }
 
 
 .nakupuj-karta #aurelius{
-    transform: scale(2.1);
+    transform: scale(1.5);
     translate: 25px 35px;
 }
 
@@ -326,6 +328,8 @@ button, select{
 .vyberte-tab img{
     position: absolute;
     object-fit: cover;
+    width: 361px;
+    height: 610px;
     filter: brightness(70%) hue-rotate(-4deg) contrast(95%);
 }
 

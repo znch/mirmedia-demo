@@ -142,33 +142,33 @@ button, select{
 .zahlavi-obrazek img{
     z-index: 1;
     width: 100%;
+    height: 600px;
     object-fit: cover;
-    scale: 1.03;
+    object-position: 45% 0;
     transform: translate(0, 2rem);
 }
 
 .zahlavi-text-na-obrazku{
     z-index: 2;
-    width: 623px;
+    width: 80%;
     color: white;
     position: absolute;
-    top: 51%;
+    top: 52%;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
 .zahlavi-text-na-obrazku h2{
-    font-size: 18px;
+    font-size: 0.8rem;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.24rem;
     font-weight: normal;
     margin-bottom: 1.25rem;
 }
 .zahlavi-text-na-obrazku h1{
-    font-weight: 700;
-    font-size: 36px;
+    font-weight: 600;
+    font-size: 1.5rem;
     letter-spacing: 0;
     text-align: center;
+    margin-bottom: 5rem;
 }
 
 .zahlavi-skroluj{
@@ -187,23 +187,23 @@ button, select{
 }
 
 .zahlavi-carousel-controls{
-    width: fit-content;
+    transform: scale(1);
     z-index: 2;
     position: absolute;
-    top: 85%;
-    left: 48.5%;
+    top: 89%;
+    left: 43%;
 }
 
 .button-white{
-    min-width: 15rem;
-    max-width: 15rem;
-    height: 58px;
+    min-width: 11rem;
+    max-width: 11rem;
+    height: 43px;
 
     background-color: #fff;
     border: none;
     display: flex;
     margin: auto;
-    margin-top: 4rem;
+    margin-top: 1rem;
     transition: 0.4s;
     
 
@@ -226,34 +226,42 @@ button, select{
 /* Sekce pro grid s tlačítky nakupuj */
 
 .nakupuj-grid{
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 0;
+    margin-bottom: 2rem;
     gap: 15px;
     justify-content: center;
 }
 
 .nakupuj-karta{
-    height: 470px;
-    width: 470px;
+    height: 195px;
+    width: 334px;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
     position: relative;
     display: flex;
 }
 
 .nakupuj-karta img{
-    transform: scale(1.5);
-    translate: 0 0px;
+    transform: scale(1);
+    translate: 0;
+    
+    width: 334px;
+    height: 195px;
+
     z-index: 1;
-    object-fit: contain;
-    filter: saturate(60%);
+    object-fit: fill;
+    filter: saturate(70%) hue-rotate(-5deg);
 }
 
 
 .nakupuj-karta #aurelius{
     transform: scale(2.1);
-    translate: 25px 35px;
+    object-fit: cover;
+    translate: 15px 20px;
 }
 
 
@@ -262,8 +270,7 @@ button, select{
     height: inherit;
     z-index: 2;
     position: absolute;
-    padding-top: 36%;
-    top: 0;
+    padding-top: 14%;
     text-align: center;
     background: rgba(0, 0, 0, 0.1);
 }
@@ -271,8 +278,8 @@ button, select{
 .nakupuj-karta-text h1{
     color: #fff;
     font-weight: 700;
-    font-size: 36px;
-    margin-bottom: 80px;
+    font-size: 24px;
+    margin-bottom: 0;
 }
 
 /* Sekce pro grid s výběrem z nabídky */
@@ -280,38 +287,41 @@ button, select{
 
 .vyberte-section{
     width: 100%;
-    height: 630px;
+    height: 304px;
     display: flex;
     flex-direction: column;
     background-color: #131313;
 }
 
 .vyberte-section-nadpis{
-    padding-top: 4.7rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     color: #fff;
-    font-size: 36px;
+    font-size: 24px;
     text-align: center;
 }
 
 .vyberte-grid{
-    width: max-content;
+    width: 100%;
     position: relative;
     display: inline-flex;
+    justify-content: start;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-wrap: nowrap;
     gap: 0px;
-    
-    justify-content: center;
+    overflow: hidden;
 }
 
 .vyberte-tab {
-    width: 361px;
-    height: 610px;
+    min-width: 168px;
+    height: 284px;
     overflow: hidden;
     position: inherit;
 }
 
 .vyberte-grid-tlacitko {
-    width: max-content;
+    width: 336px;
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -328,6 +338,8 @@ button, select{
 .vyberte-tab img{
     position: absolute;
     object-fit: cover;
+    height: 284px;
+    width: 168px;
     filter: brightness(70%) hue-rotate(-4deg) contrast(95%);
 }
 
@@ -340,7 +352,7 @@ button, select{
     position: absolute;
     text-decoration: none;
     color: #fff;
-    padding-top: 27.5rem;
+    padding-top: 11rem;
     width: 100%;
     height: 100%;
     background-color: rgba(236, 178, 53, 0);
@@ -349,54 +361,46 @@ button, select{
 }
 
 .svg-sipka{
-    opacity: 0%;
-    margin: 0;
-    transition: 0.4s;
-    translate: 0, 0;
-    
+    display: none;
 
+}
+
+.button-zobrazit-vice img{
+    display: none;
 }
 
 .vyberte-tab-text:hover{
     background-color: rgba(236, 178, 53, 0.7);
 }
 
-.vyberte-tab-text:hover .svg-sipka{
-    
-    opacity: 100%;
-    translate: 0, 5%;
-
-}
 
 .vyberte-tab-text h1{
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     width: 100%;
 }
 
 .vyberte-tab-text h2{
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
     width: 100%;
 }
 
 .button-zobrazit-vice{
-    width: 243px;
-    height: 118px;
+    width: 140px;
+    height: 67px;
     border: none;
-    font-size: 14px;
+    font-size: 12px;
     background-color: #ECB235;
     transition: 0.4s;
     display: flex;
     align-items: center;
-    padding-left: 2rem;
-    gap: 15%;
     outline: #ECB235 solid 1px;
     outline-offset: -1px;
 }
