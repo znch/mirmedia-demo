@@ -4,12 +4,12 @@ async function fetchProducts() {
  return fetchedProducts;
 }
 
-window.addEventListener("load", (event) => vytvorElements())
+window.addEventListener("load", (event) => vytvorElements(activeCategory, zobrazVse))
 
 /**
  * Změna padding v navbaru při scrollování
  */
-window.onscroll = function() {scrollFunction()};
+window.onscroll = () => {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -24,7 +24,7 @@ function scrollFunction() {
  * Obsluha fetchování produktů z JSONu + tvorba elementů a manipulace DOM
  */
 
-// custom komponenta
+// custom komponenta produktu
 class ProduktComponent extends HTMLElement{
   constructor(category, title, availability, price, imgSrc, flags){
     super();
@@ -47,57 +47,132 @@ class ProduktComponent extends HTMLElement{
     obrazek.setAttribute("src", this.imgSrc);
     obrazek.classList.add("produkt-img");
 
-    const nazev = document.createElement("h1");
+    const nazev = document.createElement("a");
+    nazev.setAttribute("href", "#nabidka-produkty")
     nazev.insertAdjacentText("afterbegin", this.title);
     nazev.classList.add("produkt-nazev");
 
     const dostupnost = document.createElement("h2");
     dostupnost.insertAdjacentText("afterbegin", this.availability);
-    dostupnost.classList.add("produkt-dostupnost")
+    dostupnost.classList.add("produkt-dostupnost");
+    if(this.availability == "Na objednávku"){
+      dostupnost.classList.add("text-gray");
+    };
+    if(this.availability == "Skladem"){
+      dostupnost.classList.add("text-green");
+    };
+    if(this.availability == "Momentálně nedostupné"){
+      dostupnost.classList.add("text-red");
+    };
+
 
     const cena = document.createElement("h1");
-    cena.insertAdjacentText("afterbegin", this.price);
+    cena.insertAdjacentText("afterbegin", this.price + " CZK");
     cena.classList.add("produkt-cena")
+
+    const kosikWrapper = document.createElement("button");
+    kosikWrapper.classList.add("kosik-wrapper");
 
     const kosikIcon = document.createElement("img");
     kosikIcon.setAttribute("src", "/assets/img/ikony-svg/kosik.svg");
     kosikIcon.classList.add("produkt-ikona-kosik");
 
+    const flagWrapper = document.createElement("div");
+    flagWrapper.classList.add("flag-wrapper")
 
+    const style = document.createElement("style");
+    style.textContent = shadowStyle;
 
+    
+    // append částí komponenty + stylu
+    shadow.appendChild(style);
     shadow.appendChild(wrapper);
     wrapper.appendChild(obrazek);
     wrapper.appendChild(nazev);
     wrapper.appendChild(dostupnost);
     wrapper.appendChild(cena);
-    wrapper.appendChild(kosikIcon);
+    wrapper.appendChild(kosikWrapper);
+    wrapper.appendChild(flagWrapper);
+    kosikWrapper.appendChild(kosikIcon);
+
+    // appendování Flagů
+    const flagsContainer = new Array();
+
+    if(this.flags.length > 0){
+      
+      for(let i in this.flags){
+        flagsContainer[i] = document.createElement("div");
+        flagsContainer[i].insertAdjacentText("afterbegin", this.flags[i])
+        
+        if(this.flags[i] == "Tip"){
+          flagsContainer[i].classList.add("flag-tip");
+        }
+        if(this.flags[i] == "Novinka"){
+          flagsContainer[i].classList.add("flag-novinka");
+        }
+        if(this.flags[i] == "Výprodej"){
+          flagsContainer[i].classList.add("flag-vyprodej");
+        }
+
+        flagWrapper.appendChild(flagsContainer[i]);
+      }
+    }
+
+    
 
   }
 
 
 
 }
-
 customElements.define("produkt-component", ProduktComponent);
 
 
+let activeCategory = "Novinky";
+let zobrazVse = false;
 
-async function vytvorElements(){
+function setActiveCategory(newCategory){
+  activeCategory = newCategory;
+}
+
+function setZobrazitVse(newValue){
+ zobrazVse = newValue;
+}
+
+function getActiveCategory(){
+  return activeCategory;
+}
+
+function getZobrazVse(){
+  return zobrazVse;  
+}
+
+async function vytvorElements(category, zobrazVse){
   const wrapper = document.getElementById("nabidka-produkty-wrapper");
-  const allProducts = await fetchProducts();
-  console.log("fungujeu");
+  const selectedProducts = await fetchProducts(); 
+  let selectedCategory = category;
+  wrapper.replaceChildren();
 
+  console.log(category);
+  
+
+  const allProducts = zobrazVse? selectedProducts.filter((cat) => cat.category === selectedCategory) : selectedProducts.filter((cat) => cat.category === selectedCategory).slice(0, 4);
   for(let i in allProducts)
   {
     wrapper.appendChild(new ProduktComponent(allProducts[i].category, allProducts[i].title, allProducts[i].availability, allProducts[i].price, allProducts[i].imgSrc, allProducts[i].flags));
     
   }
+  console.log(allProducts);
 
   
 }
 
-function swapPages(id){
+
+// metoda pro přepínání mezi kategoriemi, změní styl podle výběru + vytvoří 
+function swapPages(id, value){
   swapActiveButtonClassname(id);
+  setActiveCategory(value);
+  vytvorElements(getActiveCategory(), getZobrazVse());
 
 }
 
@@ -127,8 +202,147 @@ function swapActiveButtonClassname(id){
   
 }
 
-
+// funkce tlačítka pro zobrazení všech produktů
 function zobrazitVse(){
+  const btnZobrazitVse = document.getElementById("btnZobrazitVseProd");
+  btnZobrazitVse.innerText = zobrazVse ? "Zobrazit více produktů" : "Zobrazit méně produktů"; 
+
+  setZobrazitVse(!zobrazVse);
+  vytvorElements(getActiveCategory(), getZobrazVse());
 
 }
 
+// CSS stylování pro shadow DOM
+var shadowStyle = `
+
+  button{
+    cursor: pointer;
+    border: none;
+  }
+
+  h1, h2 {
+    margin: none
+  }
+
+
+  .produkt-wrapper{
+  
+    display: flex;
+    flex-direction: column;
+    width: 20rem; 
+    height: 32rem;
+    align-content: space-between;
+    margin: 2rem;
+    
+  
+  }
+
+  .produkt-wrapper:hover{
+    outline: 1px solid #C4C4C4;
+    outline-offset: 1rem;
+  }
+
+  .produkt-img{
+    max-height: 384px;
+    min-height: 384px;
+    
+    object-fit: cover;
+  
+  }
+
+  .produkt-nazev{
+    font-size: 18px;
+    font-weight: 500;
+    height: 44px;
+    text-decoration:none;
+    color: #000;
+  
+  }
+
+  .produkt-dostupnost{
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .text-gray{
+    color: #979797;
+  }
+
+  .text-green{
+    color: #63DA46;
+  }
+
+  .text-red{
+    color: #F24D4D;  
+  }
+
+  .produkt-cena{
+    font-size:18px;
+    font-weight: 500;
+  }
+
+  .kosik-wrapper{
+    max-height: 60px;
+    max-width: 60px;
+    min-height: 60px;
+    min-width: 60px;
+    background-color: #000;
+    display: flex;
+
+    translate: 16rem -4rem;
+  }
+
+  .produkt-ikona-kosik{
+    height: 24px;
+    width: 24px;
+    margin: auto;
+
+    }
+
+  .flag-wrapper{
+    translate: 12rem -36rem;
+
+  }
+
+  .flag-tip{
+    color: #fff;
+    background-color: #ECB235;
+    width: 122px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+  }
+
+  .flag-novinka{
+    color: #fff;
+    background-color: #63DA46;
+    width: 122px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+  }
+
+  .flag-vyprodej{
+    color: #fff;
+    background-color: #F24D4D;
+    width: 122px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+  }
+`;

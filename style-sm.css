@@ -1,3 +1,5 @@
+@media only screen and (max-width: 600px) {
+
 .montserrat-text {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -28,7 +30,7 @@ button, select{
     transition: 0.4s;
     width: 100%;
     background-color: #fff;
-    display: inline-flex;
+    display: none;
     position: fixed;
     z-index: 7;
     align-items: center;
@@ -131,7 +133,7 @@ button, select{
     position: relative;
     display: flex;
     width: 100%;
-    height: 1020px;
+    height: 673px;
     overflow: hidden;
     
 
@@ -170,13 +172,13 @@ button, select{
 }
 
 .zahlavi-skroluj{
+    display: none;
     font-size: 14px;
     color: white;
     position: absolute;
     z-index: 2;
     top: 84%;
     left: 15rem;
-    display: inline-flex;
 }
 
 .zahlavi-skroluj span{
@@ -189,7 +191,7 @@ button, select{
     z-index: 2;
     position: absolute;
     top: 85%;
-    left: 48%;
+    left: 48.5%;
 }
 
 .button-white{
@@ -804,4 +806,13 @@ button, select{
     display: inline-flex;
     align-items: center;
     width: fit-content;
+}
+
+
+
+
+
+
+
+
 }

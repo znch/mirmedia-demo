@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Demo Day</title>
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style-sm.css">
 		<script src="main.js" type="text/javascript"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -184,13 +185,16 @@
 			
 			<div class="nabidka-produkty">
 				<div id="nabidka-nav-buttons" class="nabidka-nav-buttons">
-					<button class="montserrat-text selected" onclick="swapPages(this.id)" id="novinky" value="novinky"><h1 class="">Novinky</h1></button>
-					<button class="montserrat-text inactive" onclick="swapPages(this.id)" id="nejprodavanejsi" value="nejprodavanejsi"><h1 class="">Nejprodávanější</h1></button>
-					<button class="montserrat-text inactive" onclick="swapPages(this.id)" id="doporucene" value="doporucene"><h1 class="">Doporučené</h1></button>
+					<button class="montserrat-text selected" onclick="swapPages(this.id, this.value)" id="novinky" value="Novinky"><h1 class="">Novinky</h1></button>
+					<button class="montserrat-text inactive" onclick="swapPages(this.id, this.value)" id="nejprodavanejsi" value="Nejprodávanější"><h1 class="">Nejprodávanější</h1></button>
+					<button class="montserrat-text inactive" onclick="swapPages(this.id, this.value)" id="doporucene" value="Doporučené"><h1 class="">Doporučené</h1></button>
 					
 				</div>
 				<div class="nabidka-produkty-wrapper" id="nabidka-produkty-wrapper">
-
+					<!-- Tady se nacházejí produkty vkládané JS -->
+				</div>
+				<div>
+					<button onclick="zobrazitVse()" id="btnZobrazitVseProd" class="montserrat-text button-zobrazit-vice-produktu">Zobrazit více produktů</button>
 				</div>
 			</div>
 			
